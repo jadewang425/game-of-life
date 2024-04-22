@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.board {
+  line-height: 0;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.cell {
+  display: inline-block;
+  border: 1px solid black;
+  width: 15px;
+  height: 15px;
+  margin-left: -1px;
+  margin-bottom: -1px;
+}
+
+.dead {
+  background-color: lightgray;
+}
+
+.alive {
+  background-color: yellow;
+}
