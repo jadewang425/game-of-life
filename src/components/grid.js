@@ -1,13 +1,14 @@
 
 const Cell = (props) => {
-    const { cellClass, key } = props
+    const { cellClass, cellId, row, col, selectCell } = props
+
     return (
-        <div className={cellClass} id={key}></div>
+        <div className={cellClass} id={cellId} onClick={() => selectCell(row, col)}></div>
     )
 }
 
 export default function Grid (props) {
-    const { grid, rows, cols } = props
+    const { grid, rows, cols, selectCell } = props
     const width = cols * 16
     let rowsArr = []
 
@@ -24,6 +25,7 @@ export default function Grid (props) {
                     cellId={cellId}
                     row={i}
                     col={j}
+                    selectCell={selectCell}
                 />
             )
         }
