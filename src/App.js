@@ -1,5 +1,5 @@
 import './App.css';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import Grid from './components/grid';
 import useInterval from './helper';
 
@@ -29,13 +29,10 @@ function App() {
     setGrid(initGrid)
   }
 
-  const runningRef = useRef(running)
-  runningRef.current = running
-
   // useCallback to prevent function from create every time the component is rendered
   const run = useCallback((grid) => {
     // delayed first click?
-    if (!runningRef.current) return
+    if (!running) return
     let updateGrid = arrClone(grid)
     for (let i = 0; i < numRows; i++) {
       for (let j = 0; j < numCols; j++) {
@@ -90,9 +87,9 @@ function App() {
     }
     setGrid(updateGrid)
     setGeneration(generation + 1)
-    // console.log(runningRef.current)
-  }, [generation])
+  }, [running, generation])
 
+  // custom hook
   useInterval(() => {
     run(grid)
   }, 150)
