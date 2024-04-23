@@ -2,8 +2,6 @@
 
 This project is an attempt to recreate Conway's Game of Life with React.js
 
-<!-- ## Demo
-<video src="https://imgur.com/I3AlsOs.mp4"> -->
 
 ## Technologies Used
 - React
@@ -22,3 +20,5 @@ This project is an attempt to recreate Conway's Game of Life with React.js
 ```css
 font-family: "Inconsolata", monospace;
 ```
+## Demo
+<video src="https://imgur.com/I3AlsOs.mp4">
