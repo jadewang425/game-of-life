@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Inconsolata", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,7 +10,14 @@ code {
     monospace;
 }
 
+.board-bg {
+  /* background-image: linear-gradient(to bottom right, red, yellow); */
+  width: fit-content;
+  margin: auto;
+}
+
 .board {
+  background: white;
   line-height: 0;
   margin: auto;
   margin-top: 20px;
@@ -20,7 +25,8 @@ code {
 
 .cell {
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid white;
+  border-radius: 50%;
   width: 15px;
   height: 15px;
   margin-left: -1px;
@@ -28,9 +34,23 @@ code {
 }
 
 .dead {
+  background-color: rgb(231, 231, 231);
+}
+
+.cell:hover {
   background-color: lightgray;
 }
 
 .alive {
-  background-color: yellow;
+  background-color: green;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  font-family: "Inconsolata", monospace;
 }

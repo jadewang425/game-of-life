@@ -112,17 +112,19 @@ function App() {
     <div className="App">
       <h1>Conway's Game of Life</h1>
       <div className='btns'>
-        <button onClick={random}>Random</button>
-        <button onClick={play}>Play</button>
-        <button onClick={stop}>Stop</button>
-        <button onClick={restart}>Restart</button>
+        <button className="btn" onClick={random}>Random</button>
+        <button className="btn" onClick={play}>Play</button>
+        <button className="btn" onClick={stop}>Stop</button>
+        <button className="btn" onClick={restart}>Restart</button>
       </div>
-      <Grid 
-        grid={grid}
-        rows={numRows}
-        cols={numCols}
-        selectCell={selectCell}
-      />
+      <div className='board-bg'>
+        <Grid 
+          grid={grid}
+          rows={numRows}
+          cols={numCols}
+          selectCell={selectCell}
+        />
+      </div>
       <p>Generation: {generation}</p>
     </div>
   );
