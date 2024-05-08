@@ -21,4 +21,4 @@ This project is an attempt to recreate Conway's Game of Life with React.js
 font-family: "Inconsolata", monospace;
 ```
 ## Demo
-<video src="https://imgur.com/I3AlsOs.mp4">
+![GoL Demo](https://github.com/jadewang425/game-of-life/assets/140425997/d757eeaa-0352-4349-8726-9cd3f9b2591e)
