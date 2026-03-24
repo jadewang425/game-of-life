@@ -118,30 +118,32 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Conway's Game of Life</h1>
-      <div className="btns">
-        <button className="btn" onClick={random}>
-          Random
-        </button>
-        <button className="btn" onClick={play}>
-          Play
-        </button>
-        <button className="btn" onClick={stop}>
-          Stop
-        </button>
-        <button className="btn" onClick={restart}>
-          Restart
-        </button>
+      <div className="main">
+        <h1>Conway's Game of Life</h1>
+        <div className="btns">
+          <button className="btn" onClick={random}>
+            Random
+          </button>
+          <button className="btn" onClick={play}>
+            Play
+          </button>
+          <button className="btn" onClick={stop}>
+            Stop
+          </button>
+          <button className="btn" onClick={restart}>
+            Restart
+          </button>
+        </div>
+        <div className="board-bg">
+          <Grid
+            grid={grid}
+            rows={numRows}
+            cols={numCols}
+            selectCell={selectCell}
+          />
+        </div>
+        <p>Generation: {generation}</p>
       </div>
-      <div className="board-bg">
-        <Grid
-          grid={grid}
-          rows={numRows}
-          cols={numCols}
-          selectCell={selectCell}
-        />
-      </div>
-      <p>Generation: {generation}</p>
     </div>
   );
 }
