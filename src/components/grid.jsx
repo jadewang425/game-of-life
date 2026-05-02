@@ -1,14 +1,19 @@
 
 const Cell = (props) => {
-    const { cellClass, cellId, row, col, selectCell } = props
+    const { cellClass, cellId, row, col, selectCell, color } = props
 
     return (
-        <div className={cellClass} id={cellId} onClick={() => selectCell(row, col)}></div>
+        <div
+            className={cellClass}
+            id={cellId}
+            style={{ backgroundColor: color }}
+            onClick={() => selectCell(row, col)}
+        ></div>
     )
 }
 
 export default function Grid (props) {
-    const { grid, rows, cols, selectCell } = props
+    const { grid, rows, cols, selectCell, aliveColor, deadColor } = props
     const width = cols * 16
     let rowsArr = []
 
@@ -16,16 +21,18 @@ export default function Grid (props) {
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
             let cellId = i + "_" + j
-            cellClass = grid[i][j] ? "cell alive" : "cell dead"
+            const isAlive = grid[i][j]
+            cellClass = isAlive ? "cell alive" : "cell dead"
 
             rowsArr.push(
-                <Cell 
+                <Cell
                     cellClass={cellClass}
                     key={cellId}
                     cellId={cellId}
                     row={i}
                     col={j}
                     selectCell={selectCell}
+                    color={isAlive ? aliveColor : deadColor}
                 />
             )
         }

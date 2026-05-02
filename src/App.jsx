@@ -14,6 +14,8 @@ function App() {
       .map(() => Array(numCols).fill(false)),
   );
   const [running, setRunning] = useState(false);
+  const [aliveColor, setAliveColor] = useState("#daa520");
+  const [deadColor, setDeadColor] = useState("#8a2be2");
 
   const selectCell = (row, col) => {
     let currGrid = arrClone(grid);
@@ -134,12 +136,32 @@ function App() {
             Restart
           </button>
         </div>
+        <div className="color-pickers">
+          <label className="color-picker">
+            Alive
+            <input
+              type="color"
+              value={aliveColor}
+              onChange={(e) => setAliveColor(e.target.value)}
+            />
+          </label>
+          <label className="color-picker">
+            Dead
+            <input
+              type="color"
+              value={deadColor}
+              onChange={(e) => setDeadColor(e.target.value)}
+            />
+          </label>
+        </div>
         <div className="board-bg">
           <Grid
             grid={grid}
             rows={numRows}
             cols={numCols}
             selectCell={selectCell}
+            aliveColor={aliveColor}
+            deadColor={deadColor}
           />
         </div>
         <p>Generation: {generation}</p>
